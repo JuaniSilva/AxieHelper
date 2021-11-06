@@ -25,6 +25,7 @@ button{
   color: #fff;
   font-weight: 100;
   transition: all 0.15s ease-in-out;
+  margin: 0 .5rem;
 }
 button:hover{
   transform: scale(1.1);

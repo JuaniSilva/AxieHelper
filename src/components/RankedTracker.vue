@@ -39,13 +39,16 @@ export default {
   methods: {
     addWin() {
       this.totalTrophies += this.trophies;
+      this.trophies = 0
       this.wins++
     },
     addLose() {
       this.totalTrophies -= this.trophies;
+      this.trophies = 0
       this.loses++
     },
     addDraw(){
+      this.trophies = 0
       this.draws++
     }
   },

@@ -30,8 +30,15 @@ export default {
   margin-top: 60px;
 }
 body{
-  min-height: 100%;
   background: #E59866;
-  
+  width: 100%;
+  margin: 0;
+}
+@media only screen and (min-width: 700px){
+  body{
+    max-width: 550px;
+    display: flex;
+    margin: 0 auto;
+    }
 }
 </style>
