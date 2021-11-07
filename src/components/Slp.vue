@@ -4,7 +4,7 @@
       src="https://assets.coingecko.com/coins/images/10366/large/SLP.png?1578640057"
       alt=""
     />
-    <p>${{ slpPrice }}</p>
+    <p>{{ slpPrice }}</p>
   </div>
 </template>
 <script>
@@ -12,7 +12,7 @@ export default {
   name: "Slp",
   data() {
     return {
-      slpPrice: 0,
+      slpPrice: 'Loading',
     };
   },
   methods: {
@@ -26,8 +26,8 @@ export default {
   },
   async created() {
     let price = await this.getPrice()
-    this.slpPrice = await price
-    this.slpPriceTimer()
+    this.slpPrice = `$${price}`
+    this.slpPrice = this.slpPrice.slice(0, 7)
   },
 };
 </script>
