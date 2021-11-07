@@ -1,17 +1,20 @@
 <template>
   <EnergyCalculator />
   <RankedTracker />
+  <Slp />
 </template>
 
 <script>
 import EnergyCalculator from './components/EnergyCalculator.vue'
 import RankedTracker from './components/RankedTracker.vue'
+import Slp from './components/Slp.vue'
 
 export default {
   name: 'App',
   components: {
     EnergyCalculator,
     RankedTracker,
+    Slp,
   }
 }
 </script>
