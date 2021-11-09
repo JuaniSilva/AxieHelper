@@ -30,12 +30,13 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 1rem;
 }
 body{
   background: #E59866;
   width: 100%;
   margin: 0;
+  position: relative;
 }
 @media only screen and (min-width: 700px){
   body{

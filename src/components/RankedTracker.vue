@@ -9,9 +9,11 @@
       <Button @click="addLose" text="Add Lose" />
     </div>
   </form>
-  <label for="total-trophies">Current Trophies</label><br>
-  <input class="total-trophies" id="total-trophies" v-model.number="totalTrophies">
-  <img src="https://www.pinclipart.com/picdir/big/355-3556122_4-succeed-vector-trophy-icon-png-clipart.png" alt="">
+    <label for="total-trophies">Current Trophies</label><br>
+  <div class="small-container">
+    <input class="total-trophies" id="total-trophies" v-model.number="totalTrophies">
+    <img src="https://www.pinclipart.com/picdir/big/355-3556122_4-succeed-vector-trophy-icon-png-clipart.png" alt="">
+  </div>
   <div class="container">
     <p>Wins: {{ wins }}</p>
     <p>Draws: {{ draws }}</p>
@@ -21,12 +23,13 @@
 </template>
 <script>
 import Button from "./Button.vue";
+
 export default {
   data() {
     return {
       winned: 0,
       lost: 0,
-      trophies: 0,
+      trophies: '',
       totalTrophies: 0,
       wins: 0,
       loses: 0,
@@ -39,16 +42,16 @@ export default {
   methods: {
     addWin() {
       this.totalTrophies += this.trophies;
-      this.trophies = 0
+      this.trophies = ''
       this.wins++
     },
     addLose() {
       this.totalTrophies -= this.trophies;
-      this.trophies = 0
+      this.trophies = ''
       this.loses++
     },
     addDraw(){
-      this.trophies = 0
+      this.trophies = ''
       this.draws++
     }
   },
@@ -65,7 +68,7 @@ form {
   margin: 1rem 0;
 }
 .container {
-  margin: 1rem 0;
+  margin: .5rem 0;
   display: flex;
   justify-content: space-evenly;
 }
