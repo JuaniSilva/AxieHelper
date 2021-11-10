@@ -46,7 +46,6 @@ div {
   right: 1.25rem;
   position: absolute;
   top: 0.5rem;
-  cursor: pointer;
   transform: scale(0.75);
   transition: all 0.2s ease-in-out;
 }

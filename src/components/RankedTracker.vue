@@ -20,7 +20,9 @@
     <p>Loses: {{ loses }}</p>
   </div>
     <p>Win Rate {{ winrate }}%</p>
-</template>
+    <Button @click="resetStats" text="Reset"/>
+</template> 
+
 <script>
 import Button from "./Button.vue";
 
@@ -44,15 +46,33 @@ export default {
       this.totalTrophies += this.trophies;
       this.trophies = ''
       this.wins++
+      localStorage.setItem('wins', this.wins)
+      this.saveTrophies()
     },
     addLose() {
       this.totalTrophies -= this.trophies;
       this.trophies = ''
       this.loses++
+      localStorage.setItem('loses', this.loses)
+      this.saveTrophies()
     },
     addDraw(){
       this.trophies = ''
+      this.totalTrophies += this.trophies;
       this.draws++
+      localStorage.setItem('draws', this.draws)
+      this.saveTrophies()
+    },
+    resetStats(){
+      this.wins = 0
+      this.loses = 0
+      this.draws = 0
+      localStorage.removeItem('wins')
+      localStorage.removeItem('loses')
+      localStorage.removeItem('draws')
+    },
+    saveTrophies(){
+      localStorage.setItem('trophies', this.totalTrophies)
     }
   },
   computed: {
@@ -61,6 +81,12 @@ export default {
       return ((this.wins / (this.wins + this.loses)) * 100).toFixed(2);
     },
   },
+  async created(){
+    this.wins = localStorage.getItem('wins') ? parseInt(localStorage.getItem('wins')) : 0
+    this.loses = localStorage.getItem('loses') ? parseInt(localStorage.getItem('loses')) : 0
+    this.draws = localStorage.getItem('draws') ? parseInt(localStorage.getItem('draws')) : 0
+    this.totalTrophies = localStorage.getItem('trophies') ? parseInt(localStorage.getItem('trophies')) : 0
+  }
 };
 </script>
 <style scoped>
