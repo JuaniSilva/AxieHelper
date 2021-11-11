@@ -1,8 +1,7 @@
 <template>
   <form @submit.prevent action="">
-    <label for="trophies">Thropies +/- </label><br>
+    <label for="trophies">Trophies +/-</label><br>
     <input id="trophies" type="number" v-model.number="trophies" />
-
     <div class="container">
       <Button @click="addWin" text="Add Win" />
       <Button @click="addDraw" text="Draw" />
@@ -77,7 +76,7 @@ export default {
   },
   computed: {
     winrate() {
-      if(this.loses === 0 && this.wins === 0) return 0
+      if(this.loses === 0 && this.wins === 0) return '0.00'
       return ((this.wins / (this.wins + this.loses)) * 100).toFixed(2);
     },
   },
