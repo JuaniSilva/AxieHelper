@@ -20,10 +20,13 @@
   </div>
     <p>Win Rate {{ winrate }}%</p>
     <Button @click="resetStats" text="Reset"/>
+    <Button @click="buffState" :text="showState" class="buffs"/>
+    <Buffsdebuffs v-if="showBuffs"/>
 </template> 
 
 <script>
 import Button from "./Button.vue";
+import Buffsdebuffs from './Buffsdebuffs.vue'
 
 export default {
   data() {
@@ -35,10 +38,13 @@ export default {
       wins: 0,
       loses: 0,
       draws: 0,
+      showState: 'Show Buffs & Debuffs',
+      showBuffs: false,
     };
   },
   components: {
     Button,
+    Buffsdebuffs,
   },
   methods: {
     addWin() {
@@ -72,6 +78,14 @@ export default {
     },
     saveTrophies(){
       localStorage.setItem('trophies', this.totalTrophies)
+    },
+    buffState(){
+      this.showBuffs = !this.showBuffs
+      if(this.showBuffs){
+        this.showState = 'Close'
+      } else {
+        this.showState = 'Show Buffs & Debuffs'
+      }
     }
   },
   computed: {
@@ -122,5 +136,9 @@ input[type=number] {
 }
 img {
   width: 25px;
+}
+.buffs{
+  display: flex;
+  margin: 1rem auto;
 }
 </style>
