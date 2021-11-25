@@ -104,10 +104,10 @@ export default {
 </script>
 <style scoped>
 form {
-  margin: 1rem 0;
+  margin: .75rem 0;
 }
 .container {
-  margin: .5rem 0;
+  margin: .75rem 0;
   display: flex;
   justify-content: space-evenly;
 }
@@ -139,6 +139,6 @@ img {
 }
 .buffs{
   display: flex;
-  margin: 1rem auto;
+  margin: .75rem auto;
 }
 </style>

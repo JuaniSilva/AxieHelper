@@ -31,7 +31,8 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 1rem;
+  margin-top: .75rem;
+  box-sizing: border-box;
 }
 body{
   background: #E59866;

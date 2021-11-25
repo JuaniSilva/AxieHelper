@@ -10,8 +10,8 @@
     <Button @click="newGame" text="New Game" />
   </div>
   <div class="card-counter">
-    <Button @click="addCards(1)" text="+1 Card" />
     <Button @click="addCards(-1)" text="-1 Card" />
+    <Button @click="addCards(1)" text="+1 Card" />
   </div>
   <p>Total Cards:</p>
   <p>{{ cards }}</p>
@@ -70,5 +70,8 @@ img {
 }
 .card-counter{
   margin-top: .75rem;
+}
+p{
+  margin-top: .5rem;
 }
 </style>
