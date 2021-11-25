@@ -2,8 +2,7 @@
   <img src="https://zonaxie.com/img/energy1.svg" alt="" />
   <p>Rounds {{ round }}</p>
   <p>{{ counter }} / 10</p>
-  <div 
-    class="controls">
+  <div class="controls">
     <Button @click="subsOne" text="-1 Energy" />
     <Button @click="addOne" text="+1 Energy" />
     <Button @click="nextRound" text="Next Round" />
@@ -38,21 +37,22 @@ export default {
       this.counter > 0 ? this.counter-- : 0;
     },
     nextRound() {
-      this.round++
+      this.round++;
       this.counter += 2;
-      if(this.counter >= 10){
-        this.counter = 10
+      if (this.counter >= 10) {
+        this.counter = 10;
       }
-      this.addCards(3)
+      this.addCards(3);
     },
     newGame() {
       this.round = 1;
       this.counter = 3;
       this.cards = 6;
     },
-    addCards(amount){
-      this.cards += amount
-    }
+    addCards(amount) {
+      this.cards += amount;
+      if (this.cards > 12) this.cards = 12;
+    },
   },
 };
 </script>
@@ -64,14 +64,14 @@ img {
   border: 1px solid #2c3e50;
   border-radius: 50%;
 }
-.controls{
+.controls {
   display: flex;
   justify-content: space-evenly;
 }
-.card-counter{
-  margin-top: .75rem;
+.card-counter {
+  margin-top: 0.75rem;
 }
-p{
-  margin-top: .5rem;
+p {
+  margin-top: 0.5rem;
 }
 </style>
