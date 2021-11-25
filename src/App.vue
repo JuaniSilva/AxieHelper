@@ -16,7 +16,7 @@ export default {
     EnergyCalculator,
     RankedTracker,
     Slp,
-  }
+  },
 }
 </script>
 

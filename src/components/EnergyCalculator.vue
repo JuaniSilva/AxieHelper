@@ -9,10 +9,15 @@
     <Button @click="nextRound" text="Next Round" />
     <Button @click="newGame" text="New Game" />
   </div>
+  <div class="card-counter">
+    <Button @click="addCards(1)" text="+1 Card" />
+    <Button @click="addCards(-1)" text="-1 Card" />
+  </div>
+  <p>Total Cards:</p>
+  <p>{{ cards }}</p>
 </template>
 <script>
 import Button from "./Button.vue";
-
 export default {
   name: "EnergyCalculator",
   components: {
@@ -22,6 +27,7 @@ export default {
     return {
       round: 1,
       counter: 3,
+      cards: 6,
     };
   },
   methods: {
@@ -37,11 +43,16 @@ export default {
       if(this.counter >= 10){
         this.counter = 10
       }
+      this.addCards(3)
     },
     newGame() {
       this.round = 1;
       this.counter = 3;
+      this.cards = 6;
     },
+    addCards(amount){
+      this.cards += amount
+    }
   },
 };
 </script>
@@ -56,5 +67,8 @@ img {
 .controls{
   display: flex;
   justify-content: space-evenly;
+}
+.card-counter{
+  margin-top: .75rem;
 }
 </style>

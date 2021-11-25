@@ -20,13 +20,13 @@
   </div>
     <p>Win Rate {{ winrate }}%</p>
     <Button @click="resetStats" text="Reset"/>
-    <Button @click="buffState" :text="showState" class="buffs"/>
-    <Buffsdebuffs v-if="showBuffs"/>
+    <!-- <Button @click="buffState" :text="showState" class="buffs"/> -->
+    <!-- <Buffsdebuffs v-if="showBuffs"/> -->
 </template> 
 
 <script>
 import Button from "./Button.vue";
-import Buffsdebuffs from './Buffsdebuffs.vue'
+// import Buffsdebuffs from './Buffsdebuffs.vue'
 
 export default {
   data() {
@@ -44,7 +44,7 @@ export default {
   },
   components: {
     Button,
-    Buffsdebuffs,
+    // Buffsdebuffs,
   },
   methods: {
     addWin() {
